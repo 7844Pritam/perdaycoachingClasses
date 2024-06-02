@@ -226,7 +226,7 @@ header {
 
 .categories {
     background: var(--color-bg1);
-    height: 35rem;
+    height: 40rem;
 }
 
 
@@ -237,7 +237,7 @@ header {
 
 .categories_container {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 30% 70%;
     /* gap: 4rem; */
 }
 
