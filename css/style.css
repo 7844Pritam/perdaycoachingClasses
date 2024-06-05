@@ -810,10 +810,14 @@ footer ul li a:hover {
     flex: 2;
 }
 
+.error-message{
+    color: red;
+}
 
-
-
-
+.invalid {
+    border:  red solid 2px !important;
+  /* border-color: red !important; */
+}
 /* for map  */
 
 .map_container {

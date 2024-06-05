@@ -57,6 +57,7 @@
             method="POST"
             id="contactForm"
             class="contact_form"
+            onsubmit="return validateForm()"
           >
             <input
               type="hidden"
@@ -71,8 +72,8 @@
                 id="name"
                 name="name"
                 placeholder="Enter your name"
-                required
               />
+              <span id="name-error" class="error-message"></span>
             </div>
             <div class="form_group">
               <label for="email">Email</label>
@@ -81,8 +82,8 @@
                 id="email"
                 name="email"
                 placeholder="Enter your email"
-                required
               />
+              <span id="email-error" class="error-message"></span>
             </div>
             <div class="form_group">
               <label for="phone">Phone</label>
@@ -91,8 +92,8 @@
                 id="phone"
                 name="phone"
                 placeholder="Enter your phone number"
-                required
               />
+              <span id="phone-error" class="error-message"></span>
             </div>
             <div class="form_group">
               <label for="message">Message</label>
@@ -101,8 +102,8 @@
                 name="message"
                 rows="5"
                 placeholder="Enter your message"
-                required
               ></textarea>
+              <span id="message-error" class="error-message"></span>
             </div>
             <button type="submit" class="btn">Submit</button>
           </form>
@@ -114,7 +115,7 @@
 
     <div class="map_container">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d325.95722367200085!2d80.9958965631967!3d26.845426657470437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1717345466066!5m2!1sen!2sin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.828204240297!2d80.99311017514269!3d26.845415962979875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3ab70646ac9%3A0xdcbbf95ace8fc91e!2sPerday%20Coaching%20Classes!5e0!3m2!1sen!2sin!4v1717583131043!5m2!1sen!2sin"
         width="2000"
         height="450"
         style="border: 0"
@@ -126,7 +127,7 @@
 
     <div class="button_container">
       <a
-        href="https://www.google.com/maps/dir/?api=1&destination=26.845352, 80.995612"
+        href="https://www.google.com/maps/dir/?api=1&destination=26.84546, 80.99577"
         target="_blank"
         class="nav_button"
         >Get Directions</a
