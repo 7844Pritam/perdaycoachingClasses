@@ -826,6 +826,7 @@ footer ul li a:hover {
 .map_container iframe {
   max-width: 100%;
   border-radius: 39px;
+  border: none;
 }
 
  .nav_button {
