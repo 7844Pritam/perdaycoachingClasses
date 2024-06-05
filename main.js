@@ -26,17 +26,37 @@ faqs.forEach((faq) => {
 
 // show hide nav menu?
 
-const menu = document.querySelector(".nav_menu");
-const menuBtn = document.querySelector("#open-menu-btn");
-const closeBtn = document.querySelector("#close-menu-btn");
+// document
+//   .getElementById("contactForm")
+//   .addEventListener("submit", function (event) {
+//     event.preventDefault();
 
-menuBtn.addEventListener("click", () => {
-  menu.style.display = "flex";
-  closeBtn.style.display = "inline-block";
-  menuBtn.style.display = "none";
-});
-closeBtn.addEventListener("click", () => {
-  menu.style.display = "none";
-  closeBtn.style.display = "none";
-  menuBtn.style.display = "inline-block";
-});
+//     var name = document.getElementById("name").value;
+//     var email = document.getElementById("email").value;
+//     var phone = document.getElementById("phone").value;
+//     var message = document.getElementById("message").value;
+
+//     console.log("Sending email...");
+//     console.log("Name:", name);
+//     console.log("Email:", email);
+//     console.log("Phone:", phone);
+//     console.log("Message:", message);
+
+//     Email.send({
+//       Host: "smtp.elasticemail.com",
+//       Username: "pritamsharma7844@gmail.com",
+//       Password: "D88FAA994CCDFC089AE21E2C31A0288F418E",
+//       To: "pritamsharma7844@gmail.com",
+//       From: "pritamsharma7844@gmail.com", // Ensure this matches the authenticated user
+//       Subject: "New Contact Form Submission",
+//       Body: `Name: ${name}<br>Email: ${email}<br>Phone: ${phone}<br>Message: ${message}`,
+//     })
+//       .then((message) => {
+//         console.log("Email sent successfully:", message);
+//         alert("Email sent successfully");
+//       })
+//       .catch((error) => {
+//         console.error("Failed to send email:", error);
+//         alert("Failed to send email: " + error);
+//       });
+//   });

@@ -19,9 +19,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
   </head>
 
   <body>
+    <!-- Navbar section  -->
     <nav>
       <div class="container nav_container">
         <div class="nav_logo">
@@ -41,15 +44,26 @@
       </div>
     </nav>
 
+    <!-- contact section  -->
     <section class="contact">
       <h2>Contact Us</h2>
       <div class="container contactContainer">
         <div class="left">
           <img src="/assets/vectorfinal.png" alt="SurfEdu Logo" />
         </div>
-
         <div class="right">
-          <form action="/" method="post" class="contact_form">
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            id="contactForm"
+            class="contact_form"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="a3114408-a97e-4fc8-8fa4-b439a5dc68a9"
+            />
+
             <div class="form_group">
               <label for="name">Name</label>
               <input
@@ -94,9 +108,10 @@
           </form>
         </div>
       </div>
-
-      <!-- Embed Google Map -->
     </section>
+
+    <!-- map section  -->
+
     <div class="map_container">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d325.95722367200085!2d80.9958965631967!3d26.845426657470437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1717345466066!5m2!1sen!2sin"
@@ -117,6 +132,8 @@
         >Get Directions</a
       >
     </div>
+
+    <!-- footer section  -->
 
     <footer class="footer">
       <div class="container footer_container">
