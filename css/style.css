@@ -801,7 +801,6 @@ footer ul li a:hover {
 }
 
 .left {
-    /* background-color: #28a745; */
     flex: 1;
     margin-right: 10rem;
     margin-top: 100px;
@@ -820,13 +819,16 @@ footer ul li a:hover {
 .map_container {
   display: flex;
   justify-content: center;
+    border: rgb(255, 170, 0) 10px solid;
+    border-radius: 5px;
+
   margin: 20px; /* Adjust as needed */
 }
 
 .map_container iframe {
   max-width: 100%;
-  border-radius: 39px;
-  border: none;
+
+
 }
 
  .nav_button {
