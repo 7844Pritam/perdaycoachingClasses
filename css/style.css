@@ -803,3 +803,29 @@ footer ul li a:hover {
   justify-content: center;
   margin: 20px;
 }
+
+
+/* popup container  */
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.popup-content {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  cursor: pointer;
+}

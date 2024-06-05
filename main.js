@@ -98,3 +98,18 @@ function validateEmail(email) {
   var re = /\S+@\S+\.\S+/;
   return re.test(email);
 }
+
+// for pop up container
+
+function showPopup() {
+  var popup = document.getElementById("popupContainer");
+  popup.style.display = "block";
+  setTimeout(function () {
+    popup.style.display = "none";
+  }, 3000); // Adjust the time (in milliseconds) the popup should be displayed
+}
+
+function closePopup() {
+  var popup = document.getElementById("popupContainer");
+  popup.style.display = "none";
+}
