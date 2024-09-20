@@ -21,6 +21,8 @@
     />
     <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
   </head>
 
   <body>
@@ -52,19 +54,7 @@
           <img src="/assets/vectorfinal.png" alt="SurfEdu Logo" />
         </div>
         <div class="right">
-          <form
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            id="contactForm"
-            class="contact_form"
-            onsubmit="return validateForm()"
-          >
-            <input
-              type="hidden"
-              name="access_key"
-              value="a3114408-a97e-4fc8-8fa4-b439a5dc68a9"
-            />
-
+          <form id="contactForm" class="contact_form" onsubmit="return sendEmail(event)">
             <div class="form_group">
               <label for="name">Name</label>
               <input
@@ -107,6 +97,7 @@
             </div>
             <button type="submit" class="btn">Submit</button>
           </form>
+          
         </div>
       </div>
     </section>

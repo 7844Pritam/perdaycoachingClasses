@@ -41,6 +41,43 @@ closeBtn.addEventListener("click", () => {
 });
 
 // contact form logic
+document.addEventListener("DOMContentLoaded", function () {
+  emailjs.init("Ibx4PEbTzRPsGd3nT"); // Replace with your Email.js user ID
+});
+
+function sendEmail(event) {
+  event.preventDefault();
+
+  var nameInput = document.getElementById("name");
+  var emailInput = document.getElementById("email");
+  var phoneInput = document.getElementById("phone");
+  var messageInput = document.getElementById("message");
+
+  var isValid = validateForm();
+  if (!isValid) {
+    return false;
+  }
+
+  var params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    message: document.getElementById("message").value
+  };
+
+  console.log(params); // Debugging - check the form values
+
+
+  emailjs.send("service_mri66rw", "template_he2igld", params)
+    .then(function(response) {
+      alert("Email sent successfully!");
+      document.getElementById("contactForm").reset();
+    })
+    .catch(function(error) {
+      alert("Error sending email: " + error);
+    });
+}
+
 function validateForm() {
   var nameInput = document.getElementById("name");
   var emailInput = document.getElementById("email");
@@ -52,11 +89,9 @@ function validateForm() {
   document.querySelectorAll(".error-message").forEach(function (span) {
     span.innerHTML = "";
   });
-  document
-    .querySelectorAll(".form_group input, .form_group textarea")
-    .forEach(function (input) {
-      input.classList.remove("invalid");
-    });
+  document.querySelectorAll(".form_group input, .form_group textarea").forEach(function (input) {
+    input.classList.remove("invalid");
+  });
 
   // Name validation
   if (nameInput.value.trim() === "") {
@@ -78,8 +113,7 @@ function validateForm() {
 
   // Phone validation
   if (phoneInput.value.trim() === "") {
-    document.getElementById("phone-error").innerHTML =
-      "Phone number is required";
+    document.getElementById("phone-error").innerHTML = "Phone number is required";
     phoneInput.classList.add("invalid");
     isValid = false;
   }
@@ -95,9 +129,10 @@ function validateForm() {
 }
 
 function validateEmail(email) {
-  var re = /\S+@\S+\.\S+/;
-  return re.test(email);
+  var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return re.test(String(email).toLowerCase());
 }
+
 
 // for pop up container
 
