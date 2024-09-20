@@ -55,28 +55,35 @@ function sendEmail(event) {
 
   var isValid = validateForm();
   if (!isValid) {
-    return false;
+      return false;
   }
 
   var params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    message: document.getElementById("message").value
+      name: nameInput.value,
+      email: emailInput.value,
+      phone: phoneInput.value,
+      message: messageInput.value
   };
 
   console.log(params); // Debugging - check the form values
 
+  // Show loader
+  document.getElementById("loader").style.display = "block";
 
   emailjs.send("service_mri66rw", "template_he2igld", params)
-    .then(function(response) {
-      alert("Email sent successfully!");
-      document.getElementById("contactForm").reset();
-    })
-    .catch(function(error) {
-      alert("Error sending email: " + error);
-    });
+      .then(function(response) {
+          alert("Email sent successfully!");
+          document.getElementById("contactForm").reset();
+      })
+      .catch(function(error) {
+          alert("Error sending email: " + error);
+      })
+      .finally(function() {
+          // Hide loader after email is sent
+          document.getElementById("loader").style.display = "none";
+      });
 }
+
 
 function validateForm() {
   var nameInput = document.getElementById("name");
